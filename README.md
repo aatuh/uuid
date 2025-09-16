@@ -8,7 +8,7 @@ Provides secure generation, parsing/validation, and a zero UUID helper.
 Import the package; `go get` will resolve the module automatically:
 
 ```go
-import "github.com/pureapi/pureapi-util/uuid"
+import "github.com/aatuh/uuid"
 ```
 
 ### Quick start

@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"regexp"
 
-	"github.com/pureapi/pureapi-util/random"
+	"github.com/aatuh/randutil"
 )
 
 // variant1Chars defines the allowed characters for the variant
@@ -47,15 +47,15 @@ func (u UUID) String() string {
 //   - error: An error if crypto/rand fails.
 func Ver4Var1() (UUID, error) {
 	// Generate each part using secure random hex.
-	part1, err := random.Hex(8)
+	part1, err := randutil.Hex(8)
 	if err != nil {
 		return "", fmt.Errorf("Ver4Var1: %w", err)
 	}
-	part2, err := random.Hex(4)
+	part2, err := randutil.Hex(4)
 	if err != nil {
 		return "", fmt.Errorf("Ver4Var1: %w", err)
 	}
-	part3Hex, err := random.Hex(4)
+	part3Hex, err := randutil.Hex(4)
 	if err != nil {
 		return "", fmt.Errorf("Ver4Var1: %w", err)
 	}
@@ -68,14 +68,14 @@ func Ver4Var1() (UUID, error) {
 	}
 	variantChar := string(variant1Chars[idx])
 
-	part4Suffix, err := random.Hex(4)
+	part4Suffix, err := randutil.Hex(4)
 	if err != nil {
 		return "", fmt.Errorf("Ver4Var1: %w", err)
 	}
 	// Trim to proper length
 	part4 := variantChar + part4Suffix[1:]
 
-	part5, err := random.Hex(12)
+	part5, err := randutil.Hex(12)
 	if err != nil {
 		return "", fmt.Errorf("Ver4Var1: %w", err)
 	}
