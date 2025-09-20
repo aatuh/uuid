@@ -42,6 +42,8 @@ func (u UUID) String() string {
 //
 // The function returns an error if cryptographic randomness cannot be obtained.
 //
+// Deprecated: Use github.com/aatuh/randutil/uuid instead.
+//
 // Returns:
 //   - UUID: A random UUID conforming to Version 4 and Variant 1.
 //   - error: An error if crypto/rand fails.
@@ -87,6 +89,8 @@ func Ver4Var1() (UUID, error) {
 
 // MustVer4Var1 generates a random UUID. It panics on error.
 //
+// Deprecated: Use github.com/aatuh/randutil/uuid instead.
+//
 // Returns:
 //   - UUID: A random UUID conforming to Version 4 and Variant 1.
 func MustVer4Var1() UUID {
@@ -100,6 +104,8 @@ func MustVer4Var1() UUID {
 // FromString validates the given string and returns a UUID. It will only return
 // a UUID if it matches the Version 4, Variant 1 format. An error is returned if
 // the string is invalid.
+//
+// Deprecated: Use github.com/aatuh/randutil/uuid instead.
 //
 // Returns:
 //   - UUID: A UUID conforming to Version 4 and Variant 1.
@@ -119,6 +125,8 @@ func Ver4Var1FromString(s string) (UUID, error) {
 // MustVer4Var1FromString validates the given string and returns a UUID.
 // It panics on error.
 //
+// Deprecated: Use github.com/aatuh/randutil/uuid instead.
+//
 // Returns:
 //   - UUID: A UUID conforming to Version 4 and Variant 1.
 func MustVer4Var1FromString(s string) UUID {
@@ -133,6 +141,8 @@ func MustVer4Var1FromString(s string) UUID {
 // zero UUID is represented as "00000000-0000-4000-8000-000000000000".
 // (Note: this is a variant of nil UUID with version 4 and Variant 1 bits.)
 //
+// Deprecated: Use github.com/aatuh/randutil/uuid instead.
+//
 // Returns:
 //   - UUID: A UUID with all bytes set to zero.
 func Zero() UUID {
@@ -140,6 +150,8 @@ func Zero() UUID {
 }
 
 // IsValid returns true if the provided UUID (or its string form) is valid.
+//
+// Deprecated: Use github.com/aatuh/randutil/uuid instead.
 //
 // Parameters:
 //   - s: A string or UUID to validate.

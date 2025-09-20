@@ -1,5 +1,7 @@
 # uuid
 
+**⚠️ DEPRECATED: This package is deprecated in favor of `github.com/aatuh/randutil/uuid`.**
+
 A tiny Go helper for RFC 4122 UUID Version 4 (random) with Variant 1.
 Provides secure generation, parsing/validation, and a zero UUID helper.
 
@@ -8,6 +10,7 @@ Provides secure generation, parsing/validation, and a zero UUID helper.
 Import the package; `go get` will resolve the module automatically:
 
 ```go
+// DEPRECATED: Use github.com/aatuh/randutil/uuid instead
 import "github.com/aatuh/uuid"
 ```
 
@@ -59,3 +62,17 @@ fmt.Println(z.String())
   `4` (version 4) and the fourth block starting with one of `8,9,A,B`
   (variant 1).
 - Uses `crypto/rand` for variant selection and secure hex generation.
+
+### Migration
+
+**This package is deprecated.** Please migrate to `github.com/aatuh/randutil/uuid`:
+
+```go
+// Old
+import "github.com/aatuh/uuid"
+
+// New
+import "github.com/aatuh/randutil/uuid"
+```
+
+The API is compatible, so you can simply update your import statement.
